@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Diego Taxman | Premium Remote Tax Preparation Service</title>
+    <meta name="description" content="San Diego Taxman offers premium remote tax preparation services in San Diego, CA. Get expert tax advice, free consultations, and quality guaranteed service for individuals and businesses.">
+    <meta name="keywords" content="Tax preparation service, San Diego, remote tax service, free consultation, online appointments, expert tax team, quality guaranteed, customer support, San Diego Taxman">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+        /* Custom Properties for Colors and Fonts */
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #4a90d9;
+            --background-color: #f8f9fa;
+            --text-light-color: #f8f9fa;
+            --text-dark-color: #1a1a2e;
+            --heading-font: 'Inter', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+        }
+
+        /* Base Styles & Resets */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--text-dark-color);
+            line-height: 1.6;
+            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 0.8em;
+        }
+
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light-color);
+            padding: 0.8em 1.8em;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            color: var(--text-light-color); /* Ensure text color remains light on hover */
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.7em 1.7em;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: var(--text-light-color);
+        }
+
+        /* Header / Navigation */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--text-light-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .logo {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            font-size: 1.8em;
+            color: var(--text-light-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            white-space: nowrap; /* Prevent logo text from wrapping */
+        }
+
+        .logo i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin-left: auto; /* Push menu to the right */
+        }
+
+        .nav-menu li a {
+            color: var(--text-light-color);
+            font-weight: 600;
+            font-size: 0.95em;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none; /* Hidden by default for desktop */
+            font-size: 1.8em;
+            background: none;
+            border: none;
+            color: var(--text-light-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh; /* Responsive height */
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light-color);
+            background-image: url('https://source.unsplash.com/featured/1600x900/?Tax,preparation,service,professional');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65); /* Dark overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 1rem;
+        }
+
+        .hero h1 {
+            color: var(--text-light-color);
+            font-size: 3.2em;
+            margin-bottom: 0.4em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 2em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+        }
+
+        /* Sections General */
+        section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: rgba(var(--primary-color), 0.03); /* Light tint for even sections */
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5em;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--text-light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card i {
+            font-size: 3.5em;
+            color: var(--accent-color);
+            margin-bottom: 0.6em;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover i {
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 0.7em;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            color: #555;
+            flex-grow: 1; /* Allows paragraph to take available space */
+            margin-bottom: 1.5em; /* Space before "Learn More" */
+        }
+
+        .service-card .learn-more {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .service-card .learn-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            text-align: left; /* Text alignment within content box */
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 1rem;
+            max-width: 700px; /* Limit text width */
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background-color: var(--text-light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card i.fa-quote-left {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 2.5em;
+            color: rgba(var(--accent-color), 0.2);
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1em;
+            color: #444;
+            padding-top: 1.5em; /* Space for quote icon */
+        }
+
+        .review-card .reviewer-name {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-top: 0.5em;
+        }
+
+        .review-card .stars {
+            color: #f7b731; /* Star color */
+            margin-bottom: 0.5em;
+        }
+
+        /* New Features Section */
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .feature-item {
+            background-color: var(--text-light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background-color: rgba(var(--accent-color), 0.05);
+            transform: translateY(-3px);
+        }
+
+        .feature-item i {
+            font-size: 1.8em;
+            color: var(--accent-color);
+            min-width: 30px; /* Prevent text shifting */
+            text-align: center;
+        }
+
+        .feature-item div {
+            flex-grow: 1;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.3em;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: flex-start; /* Align form and info to start */
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-info {
+            flex: 1;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.3em;
+            width: 20px; /* Fixed width for icon */
+        }
+
+        .contact-form {
+            flex: 1.5;
+            background-color: var(--text-light-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            width: 100%; /* Ensure form takes full width */
+            max-width: 600px; /* Limit form width */
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.8em;
+            margin-bottom: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--body-font);
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.2);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: auto;
+            padding: 0.9em 2em;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-light-color);
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the top */
+            gap: 2rem;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px; /* Minimum width for columns before stacking */
+            text-align: left;
+        }
+
+        .footer-col.logo-col {
+            min-width: 250px;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid rgba(var(--accent-color), 0.5);
+            padding-bottom: 0.5em;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8em;
+        }
+
+        .footer-col ul li a,
+        .footer-col p,
+        .footer-col .logo {
+            color: var(--text-light-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover,
+        .footer-col .logo:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-col p i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(var(--text-light-color), 0.2);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.85em;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2.2em;
+            line-height: 60px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Mobile Responsiveness (Mobile-First) --- */
+
+        /* Header / Nav specific for mobile */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: row; /* Keep logo and toggle on same row */
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-toggle {
+                display: block; /* Show hamburger icon */
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--primary-color);
+                position: absolute;
+                top: 100%; /* Below the header */
+                left: 0;
+                padding: 1rem 0;
+                border-top: 1px solid rgba(var(--text-light-color), 0.1);
+                display: none; /* Hidden by default */
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                display: flex; /* Show when active */
+            }
+
+            .nav-menu li {
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .nav-menu li a {
+                padding: 0.8rem 0;
+                display: block;
+                border-bottom: 1px solid rgba(var(--text-light-color), 0.05);
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-menu {
+                display: flex !important; /* Always show on desktop */
+            }
+        }
+
+
+        @media (max-width: 992px) {
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 2.2em; }
+            .hero p { font-size: 1.1em; }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-text {
+                padding: 0;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .contact-info {
+                text-align: center;
+                padding: 0;
+            }
+            .contact-info p {
+                justify-content: center;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-col {
+                text-align: center;
+                width: 100%;
+            }
+            .footer-col.logo-col {
+                max-width: 100%;
+            }
+            .footer-col h4 {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0.8rem;
+            }
+
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.3em; }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                height: 60vh;
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1em;
+                margin-bottom: 1.5em;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+            .service-card i {
+                font-size: 2.8em;
+            }
+
+            .review-card {
+                padding: 1.5rem;
+            }
+            .review-card i.fa-quote-left {
+                font-size: 2em;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+                padding: 1.2rem;
+            }
+            .feature-item i {
+                margin-bottom: 0.5em;
+            }
+
+            .footer-col.logo-col .logo {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+16192971866" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <i class="fas fa-chart-line"></i> San Diego Taxman
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Your Trusted Partner for Expert Tax Preparation in San Diego.</h1>
+            <p>Experience meticulous tax services designed for your peace of mind and maximum returns, exclusively remote for your convenience. Serving San Diego, CA.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Premium Tax Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Tax preparation service</h3>
+                    <p>Navigate complex tax codes with our expert assistance, ensuring accuracy and compliance for individuals and businesses.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Free Consultation</h3>
+                    <p>Discuss your tax situation and explore our services with no obligation, completely free of charge.</p>
+                    <a href="#contact" class="learn-more">Book Now <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Online Appointments</h3>
+                    <p>Conveniently schedule and conduct all your tax meetings from the comfort of your home, saving you time.</p>
+                    <a href="#contact" class="learn-more">Schedule Online <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users-gear"></i>
+                    <h3>Expert Team</h3>
+                    <p>Benefit from the knowledge and dedication of our highly qualified and experienced tax professionals.</p>
+                    <a href="#about" class="learn-more">Meet Our Team <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality Guaranteed</h3>
+                    <p>Rest assured with our unwavering commitment to delivering accurate and reliable tax solutions every time.</p>
+                    <a href="#reviews" class="learn-more">Client Testimonials <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Customer Support</h3>
+                    <p>Receive prompt, friendly, and knowledgeable assistance whenever you need it, ensuring a smooth experience.</p>
+                    <a href="#contact" class="learn-more">Contact Us <i class="fas fa-arrow-right fa-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container about-content">
+            <h2>About San Diego Taxman</h2>
+            <div class="about-image">
+                <img src="https://source.unsplash.com/featured/900x600/?Tax,preparation,service,team" alt="Professional Tax Team">
+            </div>
+            <div class="about-text">
+                <h3>Your Dedicated Remote Tax Experts in San Diego</h3>
+                <p>At San Diego Taxman, we pride ourselves on being a premier tax preparation service, exclusively serving clients remotely from our San Diego base. Our mission is to provide unparalleled expertise and personalized attention to every client, ensuring your financial compliance and maximizing your returns.</p>
+                <p>We understand that tax matters can be complex and stressful. That's why our Expert Team is committed to making the process seamless and transparent. With a focus on Quality Guaranteed service, we leverage modern technology to offer Online Appointments and comprehensive Customer Support, allowing you to manage your taxes efficiently from anywhere.</p>
+                <p>Whether you're an individual or a business, we offer a Free Consultation to understand your unique needs and tailor our Tax preparation service to achieve the best possible outcomes. Choose San Diego Taxman for a trustworthy and professional tax experience.</p>
+                <a href="#contact" class="btn btn-outline">Schedule a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <div class="container">
+            <h2>What Our San Diego Clients Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"San Diego Taxman made my tax season stress-free! Their Tax preparation service was incredibly thorough, and I especially appreciated the ease of Online Appointments. The team was responsive and ensured everything was perfect. Truly Quality Guaranteed."</p>
+                    <p class="reviewer-name">- Maria S., San Diego, CA</p>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"I was hesitant about remote tax services, but San Diego Taxman's Expert Team quickly put my mind at ease. The Free Consultation clarified all my questions, and their Customer Support was outstanding throughout the entire process. Highly recommend!"</p>
+                    <p class="reviewer-name">- David L., National City, CA</p>
+                </div>
+                <div class="review-card">
+                    <i class="fas fa-quote-left"></i>
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best tax experience I've had! San Diego Taxman delivered on their promise of Quality Guaranteed service. Their remote Tax preparation service was efficient, and the ability to have Online Appointments fit perfectly into my busy schedule."</p>
+                    <p class="reviewer-name">- Jessica R., Chula Vista, CA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2>Now Available: Enhanced Client Features</h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <div>
+                        <h3>Live Chat</h3>
+                        <p>Instant visitor support available 24/7 for immediate assistance with your questions.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div>
+                        <h3>Online Booking</h3>
+                        <p>Easily book your appointments directly through our website without needing to call.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>AI Assistant</h3>
+                        <p>Get quick and accurate answers to your common tax questions automatically.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    <div>
+                        <h3>AI Voice Agent</h3>
+                        <p>Every call is answered promptly, ensuring you never miss an important conversation.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp Integration</h3>
+                        <p>Receive instant replies and support directly via WhatsApp for ultimate convenience.</p>
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <i class="fab fa-google"></i>
+                    <div>
+                        <h3>Live Google Reviews</h3>
+                        <p>See our most recent client feedback updated automatically right here on our site.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container contact-content">
+            <h2>Contact San Diego Taxman</h2>
+            <div class="contact-info">
+                <h3>Get in Touch Today</h3>
+                <p><i class="fas fa-phone-alt"></i> Phone: <a href="tel:+16192971866">+1 619-297-1866</a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@sandiegotaxman.com">info@sandiegotaxman.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: REMOTE SERVICE ONLY, 1733 National Ave, San Diego, CA 92113, United States</p>
+                <p>We are a fully remote service, dedicated to providing convenient and expert tax solutions no matter where you are located.</p>
+            </div>
+            <form class="contact-form" action="submit_form.php" method="POST">
+                <h3>Enquiry Form</h3>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Your Phone (Optional)</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="service">Interested Service</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service...</option>
+                    <option value="Tax preparation service">Tax preparation service</option>
+                    <option value="Free Consultation">Free Consultation</option>
+                    <option value="Online Appointments">Online Appointments</option>
+                    <option value="Expert Team">Expert Team Inquiry</option>
+                    <option value="Quality Guaranteed">Quality Guaranteed (General Inquiry)</option>
+                    <option value="Customer Support">Customer Support</option>
+                </select>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col logo-col">
+                <a href="#hero" class="logo">
+                    <i class="fas fa-chart-line"></i> San Diego Taxman
+                </a>
+                <p style="margin-top: 1em;">Your trusted partner for premium remote tax preparation services in San Diego, ensuring accuracy and peace of mind.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#reviews">Client Reviews</a></li>
+                    <li><a href="#features">New Features</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><p>Tax preparation service</p></li>
+                    <li><p>Free Consultation</p></li>
+                    <li><p>Online Appointments</p></li>
+                    <li><p>Expert Team</p></li>
+                    <li><p>Quality Guaranteed</p></li>
+                    <li><p>Customer Support</p></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+16192971866">+1 619-297-1866</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@sandiegotaxman.com">info@sandiegotaxman.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> REMOTE SERVICE ONLY, 1733 National Ave, San Diego, CA 92113, United States</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 San Diego Taxman. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Smooth Scroll & Mobile Nav -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile nav after clicking a link
+                    const navMenu = document.querySelector('.nav-menu');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Mobile Navigation Toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
